@@ -63,26 +63,26 @@ class NaiveBayesClassifier:
 
 
 def main():
-    # データ
-    training_data = [["good", [u"よい", u"とても"]],
-                   ["good", [u"よい", u"とても", u"すばらしい"]],
-                   ["good", [u"よい", u"すばらしい", u"見つかりません"]], 
-                   ["good", [u"すばらしい"]],
-                   ["bad",  [u"見つかりません", u"買いたくない"]],
-                   ["bad",  [u"よい"]],
-                   ["bad",  [u"買いたくない", u"最悪"]],
-                   ["bad",  [u"最悪"]]]
-    test_data  = [u"よい", u"とても"]
+    # 데이터
+    training_data = [["good", [u"좋다", u"매우"]],
+                   ["good", [u"좋다", u"매우", u"굉장하다"]],
+                   ["good", [u"좋다", u"굉장하다", u"찾을 수 없다"]], 
+                   ["good", [u"굉장하다"]],
+                   ["bad",  [u"찾을 수 없다", u"사고 싶지 않다"]],
+                   ["bad",  [u"좋다"]],
+                   ["bad",  [u"사고 싶지 않다", u"최악"]],
+                   ["bad",  [u"최악"]]]
+    test_data  = [u"좋다", u"매우"]
 
 
     classifier = NaiveBayesClassifier()
 
-    # 学習フェーズ
+    # 학습 단계
     for c, f in training_data:
       classifier.learn(c, f)
 
-    # 適用フェーズ
-    print classifier.classifly(test_data)
+    # 적용 단계
+    print(classifier.classifly(test_data))
 
 if __name__ == "__main__":
     main()
