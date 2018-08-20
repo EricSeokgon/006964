@@ -260,7 +260,7 @@ def main():
 
     for i in range(30):
       for j in range(2):
-          print "%d:%f" % (j, X[i][j]),
+          print("%d:%f" % (j, X[i][j])),
 
     classifier = SVMClassifier(2, 10)
 
@@ -277,9 +277,9 @@ def main():
         ret = -1
 
       if T[i] * ret > 0:
-        print "true"
+        print("true")
       else:
-        print "false"
+        print("false")
 
 
     param = sys.argv
