@@ -36,7 +36,7 @@ class PerceptronOnlineClassifier(object):
 
 
 def main():
-    # データ
+    # 데이터
     training_data = [[-1, [-1, -1]],
                      [ 1, [-1,  1]],
                      [ 1, [ 1, -1]],
@@ -46,12 +46,12 @@ def main():
 
     classifier = PerceptronOnlineClassifier(2, 0.1)
 
-    # 学習フェーズ
+    # 학습 단계
     for y, x in training_data:
         classifier.learn(y, x)
 
-    # 適用フェーズ
-    print classifier.classify(test_data)
+    # 적용 단계
+    print(classifier.classify(test_data))
 
 if __name__ == "__main__":
     main()
