@@ -37,7 +37,7 @@ class PerceptronClassifier:
 
 
 def main():
-    # データ
+    # 데이터
     x = [[-1, -1],
          [-1,  1],
          [ 1, -1],
@@ -48,11 +48,11 @@ def main():
 
     classifier = PerceptronClassifier(2, 0.1)
 
-    # 学習フェーズ
+    # 학습 단계
     classifier.learn(t, x)
 
-    # 適用フェーズ
-    print classifier.classify(test_data)
+    # 적용 단계
+    print(classifier.classify(test_data))
 
 if __name__ == "__main__":
     main()

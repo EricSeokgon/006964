@@ -84,7 +84,7 @@ def main():
         classifier.learn(y, x)
 
     # 適用フェーズ
-    print classifier.classify(test_data)
+    print(classifier.classify(test_data))
 
 if __name__ == "__main__":
     main()
