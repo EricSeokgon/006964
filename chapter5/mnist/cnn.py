@@ -50,14 +50,14 @@ b_fc2 = bias_variable([10])
 
 y_conv=tf.nn.softmax(tf.matmul(h_fc1_drop, w_fc2) + b_fc2)
 
-# Define loss and optimizer
+# 오차 함수와 최적화 기법 설정
 y = y_conv
 t = tf.placeholder(tf.float32, [None, 10])
 loss = tf.reduce_mean(-tf.reduce_sum(t * tf.log(y), reduction_indices=[1]))
 optimizer = tf.train.AdamOptimizer(1e-4)
 train_step = optimizer.minimize(loss)
 
-# Train
+# 모델 학습
 init = tf.initialize_all_variables()
 correct_prediction = tf.equal(tf.argmax(y_conv,1), tf.argmax(t,1))
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
