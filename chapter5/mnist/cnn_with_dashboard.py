@@ -100,7 +100,7 @@ def main():
          saver.save(session, './checkpoints/traindata', global_step = i)
          print("step %d, training accuracy %g" % (i, acc))
 
-    # Test trained model
+    # 학습한 모델을 검증
     print(accuracy.eval({x: mnist.test.images, y_: mnist.test.labels, keep_prob: 1.0}))
     session.close()
 
